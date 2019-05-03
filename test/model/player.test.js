@@ -45,7 +45,7 @@ test("Player shold be able to make move", () => {
 
 test("Player should be able to make coin active", () => {
   player.makeCoinActive(1);
-  expect(player.coins.isActiveCoin(1)).toBe(true);
+  expect(player.coins.isActiveCoin(1)).toBeTruthy;
 });
 
 test("Player should be able reset coin position", () => {
@@ -56,5 +56,5 @@ test("Player should be able reset coin position", () => {
 
 test("Player should be able to clear coin", () => {
   player.clearCoin(1);
-  expect(player.coins.isClearedCoin(1)).toBe(true);
+  expect(player.coins.isClearedCoin(1)).toBeTruthy;
 });

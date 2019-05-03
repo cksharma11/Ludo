@@ -33,10 +33,10 @@ test("should reset the coin position to 0", () => {
 
 test("should mark the coin as clear", () => {
   coinSet.clear(1);
-  expect(coinSet.isClearedCoin(1)).toBe(true);
+  expect(coinSet.isClearedCoin(1)).toBeTruthy;
 });
 
 test("should make given coin active", () => {
   coinSet.makeCoinActive(1);
-  expect(coinSet.isActiveCoin(1)).toBe(true);
+  expect(coinSet.isActiveCoin(1)).toBeTruthy;
 });
