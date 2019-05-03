@@ -60,3 +60,19 @@ header{
   height: 30px;
   border: 1px solid black;
 }
+
+.red{
+  background: rgb(231, 96, 96);
+}
+
+.green{
+  background: rgb(112, 236, 112);
+}
+
+.yellow{
+  background: rgb(230, 230, 91);
+}
+
+.blue{
+  background: rgb(84, 84, 235);
+}
