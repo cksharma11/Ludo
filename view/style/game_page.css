@@ -19,8 +19,8 @@ header{
 
 .coin_container{
   display: flex;
-  width: 222px;
-  height: 222px;
+  width: 250px;
+  height: 250px;
   justify-content: center;
   align-items: center;
   border: 1px solid black;
@@ -51,13 +51,13 @@ header{
 
 .board_middle_row{
   display: flex;
-  width: 544px;
+  width: 630px;
   justify-content: space-between;
 }
 
 .cell{
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
 }
 
