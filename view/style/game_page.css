@@ -30,7 +30,7 @@ header{
   justify-content: center;
   align-items: center;
   border: 1px solid black;
-  background: #3c4844;
+  /* background: #3c4844; */
 }
 
 .coin{
@@ -66,8 +66,10 @@ header{
 }
 
 .cell{
+  display: flex;
   width: 40px;
   height: 40px;
+  justify-content: center;
   border: 1px solid #433e5d;
 }
 

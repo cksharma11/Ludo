@@ -16,6 +16,11 @@ const createGameView = gameData => {
 };
 
 const getGame = () => {
+  // document.getElementById("44").innerHTML = coin("red");
+  // document.getElementById("24").innerHTML = coin("blue") + coin("yellow");
+  // document.getElementById("54").innerHTML = coin("green");
+  // document.getElementById("14").innerHTML = coin("yellow");
+
   fetch("/game")
     .then(res => res.json())
     .then(res => createGameView(res));
