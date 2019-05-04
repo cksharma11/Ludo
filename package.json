@@ -17,5 +17,9 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^24.7.1"
+  },
+  "dependencies": {
+    "fastify": "^2.3.0",
+    "fastify-static": "^2.4.0"
   }
 }

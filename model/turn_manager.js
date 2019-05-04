@@ -5,7 +5,7 @@ class TurnManager {
   }
 
   updateTurn() {
-    if (this.currentPlayerIndex < 3) {
+    if (this.currentPlayerIndex < this.players.length - 1) {
       this.currentPlayerIndex++;
       return;
     }
