@@ -3,12 +3,7 @@
   <head>
     <title>Ludo</title>
     <link rel="stylesheet" type="text/css" href="style/game_page.css" />
-    <script>
-      function rollDice() {
-        const diceValue = Math.floor(Math.random() * 6 + 1);
-        document.getElementById("dice").innerText = diceValue;
-      }
-    </script>
+    <script src="script/game.js"></script>
   </head>
   <body>
     <header>
@@ -107,7 +102,7 @@
           </div>
         </div>
 
-        <div id="dice" class="dice" onclick="rollDice()"></div>
+        <div id="dice" class="dice" onclick="getGame()"></div>
 
         <div class="cell_column_container">
           <div class="cell_column">

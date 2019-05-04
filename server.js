@@ -2,13 +2,17 @@ const fastify = require("fastify")({ logger: true });
 const path = require("path");
 const PORT = process.env.PORT || 8080;
 
+const { getGame } = require("./handler/handler");
+
 fastify.register(require("fastify-static"), {
-  root: path.join(__dirname, "view"),
+  root: path.join(__dirname, "view")
 });
 
 fastify.get("/", async (req, res) => {
   res.sendFile("game_page.html");
 });
+
+fastify.get("/game", getGame);
 
 const start = async () => {
   try {

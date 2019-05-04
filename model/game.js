@@ -13,3 +13,5 @@ class Game {
     return this.dice();
   }
 }
+
+module.exports = Game;
