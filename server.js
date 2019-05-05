@@ -8,7 +8,7 @@ fastify.register(require("fastify-static"), {
   root: path.join(__dirname, "view")
 });
 
-fastify.get("/", async (req, res) => {
+fastify.get("/home", async (req, res) => {
   res.sendFile("game_page.html");
 });
 
