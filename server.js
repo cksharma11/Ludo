@@ -1,27 +1,29 @@
-const fastify = require("fastify")({ logger: true });
-const path = require("path");
-const PORT = process.env.PORT || 8080;
+const express = require("express");
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const ejs = require("ejs");
+const app = express();
 
+const PORT = process.env.PORT || 8080;
 const { getGame } = require("./handler/handler");
 
-fastify.register(require("fastify-static"), {
-  root: path.join(__dirname, "view")
-});
-
-fastify.get("/home", async (req, res) => {
-  res.sendFile("game_page.html");
-});
-
-fastify.get("/game", getGame);
-
-const start = async () => {
-  try {
-    await fastify.listen(PORT);
-    fastify.log.info(`server is running on ${fastify.server.address().port}`);
-  } catch (err) {
-    fastify.log.error(err);
-    process.exit(1);
-  }
+const logger = (req, res, next) => {
+  console.log(req.method, req.url);
+  next();
 };
 
-start();
+app.set("views", __dirname + "/view");
+app.engine("html", ejs.renderFile);
+app.set("view engine", "html");
+
+app.use(cookieParser());
+app.use(bodyParser.text());
+app.use(express.static(__dirname + "/view"));
+app.use(logger);
+
+app.get("/game", getGame);
+app.get("/home", (req, res) => {
+  res.render("game_page.html");
+});
+
+app.listen(PORT, () => console.log("listning on ", PORT));

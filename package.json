@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "jest",
-    "coverage" : "npx jest --coverage"
+    "coverage": "npx jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +20,10 @@
     "jest": "^24.7.1"
   },
   "dependencies": {
-    "fastify": "^2.3.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
     "fastify-static": "^2.4.0"
   }
 }

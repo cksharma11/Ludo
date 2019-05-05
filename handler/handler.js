@@ -3,6 +3,12 @@ const TurnManager = require("../model/turn_manager");
 const dice = require("../model/dice");
 const Player = require("../model/player");
 
+const createGameId = () => Math.floor(Math.random() * 10);
+
+const createGame = (req, res) => {
+  const gameId = createGameId();
+};
+
 const getGame = async (req, res) => {
   const players = [
     new Player("Jhon", "red"),
