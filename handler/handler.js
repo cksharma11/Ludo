@@ -5,7 +5,7 @@ const Player = require("../model/player");
 
 const getGame = async (req, res) => {
   const players = [
-    new Player("Ankit", "red"),
+    new Player("Jhon", "red"),
     new Player("Chandan", "green"),
     new Player("Dheeraj", "yellow"),
     new Player("Gaurav", "blue")

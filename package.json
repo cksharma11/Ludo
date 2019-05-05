@@ -10,7 +10,8 @@
     "verbose": true
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coverage" : "npx jest --coverage"
   },
   "keywords": [],
   "author": "",
