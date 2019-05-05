@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ludo Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Join Game</title>
     <link rel="stylesheet" type="text/css" media="screen" href="style/welcome.css" />
     <script src="main.js"></script>
   </head>
   <body>
     <header>
-      Ludo 
+      Join Game
     </header>
     <section>
-      <a href="/create_game.html">Create Game</a>
-      <a href="/join_game.html">Join Game</a>
-      <a href="/">About</a>
+      <form action="/createGame" method="post">
+        <input type="text" placeholder="name" />
+        <input type="text" placeholder="game id" />
+        <button>Join Game</button>
+      </form>
     </section>
   </body>
 </html>
