@@ -1,12 +1,14 @@
-html, body{
+html,
+body {
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
 }
 
-header{
+header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -15,7 +17,7 @@ header{
   border-bottom: 1px solid black;
 }
 
-.main_container{
+.main_container {
   display: flex;
   padding: 15px;
   align-items: center;
@@ -23,7 +25,7 @@ header{
   flex-direction: column;
 }
 
-.coin_container{
+.coin_container {
   display: flex;
   width: 250px;
   height: 250px;
@@ -33,7 +35,7 @@ header{
   /* background: #3c4844; */
 }
 
-.coin{
+.coin {
   display: flex;
   justify-content: center;
   width: 70px;
@@ -42,30 +44,30 @@ header{
   border-radius: 18px;
 }
 
-.player_row{
+.player_row {
   display: flex;
 }
 
-.cell_row{
+.cell_row {
   display: flex;
 }
 
-.cell_column{
+.cell_column {
   display: flex;
   flex-direction: column;
 }
 
-.cell_column_container{
+.cell_column_container {
   display: flex;
 }
 
-.board_middle_row{
+.board_middle_row {
   display: flex;
   width: 630px;
   justify-content: space-between;
 }
 
-.cell{
+.cell {
   display: flex;
   width: 40px;
   height: 40px;
@@ -73,48 +75,49 @@ header{
   border: 1px solid #433e5d;
 }
 
-.red{
+.red {
   background: rgb(231, 96, 96);
 }
 
-.green{
+.green {
   background: rgb(112, 236, 112);
 }
 
-.yellow{
+.yellow {
   background: rgb(230, 230, 91);
 }
 
-.blue{
+.blue {
   background: rgb(84, 84, 235);
 }
 
-.dark_red{
+.dark_red {
   background: red;
 }
 
-.dark_green{
+.dark_green {
   background: green;
 }
 
-.dark_yellow{
+.dark_yellow {
   background: yellow;
 }
 
-.dark_blue{
+.dark_blue {
   background: blue;
 }
 
-
-.dice{
+.dice {
   width: 35px;
   height: 35px;
+  margin: -18px;
   align-self: center;
   border: 1px solid black;
-  text-align: center;
+  border-radius: 7px;
+  background: #ceffa2;
 }
 
-.coin_symbol{
+.coin_symbol {
   height: 50%;
   width: 50%;
   align-self: center;
@@ -122,10 +125,11 @@ header{
   border-radius: 50%;
 }
 
-.clear_coins_container{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  border: 1px solid #433e5d;
-  border-radius: 2px;
+.clear_coins_container {
+  width: 0px;
+  height: 0px;
+  border-top: 63px solid #5454eb;
+  border-bottom: 63px solid #70ec70;
+  border-left: 63px solid #e76060;
+  border-right: 63px solid #e6e65c;
 }
