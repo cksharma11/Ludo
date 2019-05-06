@@ -10,7 +10,7 @@ const getActiveGame = req => req.app.activeGames[getGameId(req)].game;
 
 const colors = ["green", "yellow", "blue", "red"];
 
-const setCookie = function(res, gameId, player) {
+const setCookie = (res, gameId, player) => {
   const cookie = Date.now();
   res.cookie("playerId", cookie);
   res.cookie("gameId", gameId);
@@ -49,7 +49,7 @@ const startGame = (req, res) => {
   res.redirect("/home");
 };
 
-const getGame = async (req, res) => {
+const getGame = (req, res) => {
   res.send(JSON.stringify(getActiveGame(req)));
 };
 
