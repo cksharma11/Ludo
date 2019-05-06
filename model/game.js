@@ -3,6 +3,12 @@ class Game {
     this.players = players;
     this.dice = dice;
     this.turnManager = turnManager;
+    this.diceValue = 1;
+    this.lastUpdated = Date.now();
+  }
+
+  updateLastUpdateTime() {
+    this.lastUpdated = Date.now();
   }
 
   getCurrentPlayer() {
@@ -10,7 +16,8 @@ class Game {
   }
 
   rollDice() {
-    return this.dice();
+    this.updateLastUpdateTime();
+    this.diceValue = this.dice();
   }
 }
 

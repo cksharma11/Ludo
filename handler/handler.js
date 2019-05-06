@@ -27,11 +27,10 @@ const createGame = (req, res) => {
   req.app.activeGames[gameId].players.push(new Player(hostname, colors.pop()));
 
   setCookie(res, gameId, hostname);
-
   res.redirect("/waiting_page.html");
 };
 
-const joinGame = (req,res) => {
+const joinGame = (req, res) => {
   console.log(req.body);
   const playerName = req.body.name;
   const gameId = req.body.gameId;
@@ -39,13 +38,14 @@ const joinGame = (req,res) => {
 
   setCookie(res, gameId, playerName);
   res.redirect("/waiting_page.html");
-}
+};
 
 const startGame = (req, res) => {
   const gameId = req.cookies.gameId;
   const players = req.app.activeGames[gameId].players;
   const turnManager = new TurnManager(players);
-  req.app.activeGames[gameId].game = new Game(players, dice, turnManager);
+  const bindedDice = dice.bind(null, Math.random);
+  req.app.activeGames[gameId].game = new Game(players, bindedDice, turnManager);
   res.redirect("/home");
 };
 
@@ -53,9 +53,16 @@ const getGame = async (req, res) => {
   res.send(JSON.stringify(getActiveGame(req)));
 };
 
+const rollDice = (req, res) => {
+  const game = getActiveGame(req);
+  game.rollDice();
+  getGame(req, res);
+};
+
 module.exports = {
   getGame,
   createGame,
   startGame,
-  joinGame
+  joinGame,
+  rollDice
 };
