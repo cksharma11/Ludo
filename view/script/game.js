@@ -7,8 +7,8 @@ const startGame = () => {
 };
 
 const createGameView = gameData => {
-  const playerName = gameData.players[0].name;
-  document.getElementById("player_name").innerText = playerName;
+  const cookie = cookieParser(document.cookie);
+  document.getElementById("player_name").innerText = cookie.playerName;
 
   gameData.players.forEach(player => {
     for (let coinNumber = 1; coinNumber < 5; coinNumber++) {
@@ -20,13 +20,9 @@ const createGameView = gameData => {
 };
 
 const getGame = () => {
-  console.log("lol")
   fetch("/game")
     .then(res => res.json())
-    .then(res => {
-      console.log(res)
-      createGameView(res)
-    });
+    .then(res => createGameView(res));
 };
 
 window.onload = getGame;

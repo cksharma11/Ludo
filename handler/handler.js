@@ -14,6 +14,7 @@ const setCookie = function(res, gameId, player) {
   const cookie = Date.now();
   res.cookie("playerId", cookie);
   res.cookie("gameId", gameId);
+  res.cookie("playerName", player);
   res.app.cookies[cookie] = player;
 };
 
