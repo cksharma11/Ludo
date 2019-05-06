@@ -1,3 +1,5 @@
+const routes = require("../data/routes.json");
+
 class Coins {
   constructor(color) {
     this.color = color;
@@ -7,6 +9,7 @@ class Coins {
       3: { position: 0, isCleared: false, isActive: false },
       4: { position: 0, isCleared: false, isActive: false }
     };
+    this.route = routes[color];
   }
 
   moveCoin(coinNumber, newPosition) {

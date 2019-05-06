@@ -1,4 +1,5 @@
 const Coins = require("../../model/coins");
+const routes = require("../../data/routes.json")
 
 beforeEach(() => {
   coinSet = new Coins("red");
@@ -12,7 +13,8 @@ test("should create set of 4 coins with initial position 0", () => {
       2: { position: 0, isCleared: false, isActive: false },
       3: { position: 0, isCleared: false, isActive: false },
       4: { position: 0, isCleared: false, isActive: false }
-    }
+    },
+    route : routes["red"]
   };
 
   expect(coinSet).toEqual(expected);

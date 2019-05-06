@@ -1,4 +1,5 @@
 const Player = require("../../model/player");
+const routes = require("../../data/routes.json");
 
 beforeEach(() => {
   player = new Player("A", "red");
@@ -29,7 +30,8 @@ test("sould create player with set of coins", () => {
           position: 0
         }
       },
-      color: "red"
+      color: "red",
+      route: routes["red"]
     },
     color: "red",
     name: "A"

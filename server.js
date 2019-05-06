@@ -5,7 +5,10 @@ const ejs = require("ejs");
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-const { getGame } = require("./handler/handler");
+const { getGame, createGame, startGame } = require("./handler/handler");
+
+app.activeGames = {};
+app.cookies = {};
 
 const logger = (req, res, next) => {
   console.log(req.method, req.url);
@@ -17,9 +20,12 @@ app.engine("html", ejs.renderFile);
 app.set("view engine", "html");
 
 app.use(cookieParser());
-app.use(bodyParser.text());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/view"));
 app.use(logger);
+
+app.post("/createGame", createGame);
+app.post("/startGame", startGame);
 
 app.get("/game", getGame);
 app.get("/home", (req, res) => {

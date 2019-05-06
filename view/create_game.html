@@ -10,8 +10,13 @@
     </header>
     <section>
       <form action="/createGame" method="post">
-        <input type="text" placeholder="hostname" required/>
-        <input type="number" placeholder="number of players" required/>
+        <input type="text" placeholder="hostname" name="hostname" required />
+        <input
+          type="number"
+          placeholder="number of players"
+          name="numberOfPlayers"
+          required
+        />
         <button>Host Game</button>
       </form>
     </section>
