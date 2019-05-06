@@ -31,6 +31,16 @@ const createGame = (req, res) => {
   res.redirect("/waiting_page.html");
 };
 
+const joinGame = (req,res) => {
+  console.log(req.body);
+  const playerName = req.body.name;
+  const gameId = req.body.gameId;
+  req.app.activeGames[gameId].players.push(new Player(playerName, colors.pop()));
+
+  setCookie(res, gameId, playerName);
+  res.redirect("/waiting_page.html");
+}
+
 const startGame = (req, res) => {
   const gameId = req.cookies.gameId;
   const players = req.app.activeGames[gameId].players;
@@ -46,5 +56,6 @@ const getGame = async (req, res) => {
 module.exports = {
   getGame,
   createGame,
-  startGame
+  startGame,
+  joinGame
 };

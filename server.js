@@ -5,7 +5,7 @@ const ejs = require("ejs");
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-const { getGame, createGame, startGame } = require("./handler/handler");
+const { getGame, createGame, startGame, joinGame } = require("./handler/handler");
 
 app.activeGames = {};
 app.cookies = {};
@@ -26,6 +26,7 @@ app.use(logger);
 
 app.post("/createGame", createGame);
 app.post("/startGame", startGame);
+app.post("/joinGame", joinGame);
 
 app.get("/game", getGame);
 app.get("/home", (req, res) => {
