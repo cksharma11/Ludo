@@ -128,8 +128,8 @@ header {
 .clear_coins_container {
   width: 0px;
   height: 0px;
-  border-top: 63px solid #5454eb;
-  border-bottom: 63px solid #70ec70;
-  border-left: 63px solid #e76060;
-  border-right: 63px solid #e6e65c;
+  border-top: 63px solid rgb(84, 84, 235);
+  border-bottom: 63px solid rgb(112, 236, 112);
+  border-left: 63px solid rgb(231, 96, 96);
+  border-right: 63px solid rgb(230, 230, 91);
 }
