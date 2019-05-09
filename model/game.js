@@ -4,6 +4,7 @@ class Game {
     this.dice = dice;
     this.turnManager = turnManager;
     this.diceValue = 1;
+    this.currentPlayer = players[0];
     this.lastUpdated = Date.now();
   }
 
