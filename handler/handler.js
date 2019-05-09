@@ -31,8 +31,7 @@ const createGame = (req, res) => {
 };
 
 const joinGame = (req, res) => {
-  console.log(req.body);
-    const playerName = req.body.name;
+  const playerName = req.body.name;
   const gameId = req.body.gameId;
   req.app.activeGames[gameId].players.push(new Player(playerName, colors.pop()));
 
