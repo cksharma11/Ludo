@@ -4,10 +4,10 @@ class Coins {
   constructor(color) {
     this.color = color;
     this.coins = {
-      1: { position: 0, isCleared: false, isActive: false },
-      2: { position: 0, isCleared: false, isActive: false },
-      3: { position: 0, isCleared: false, isActive: false },
-      4: { position: 0, isCleared: false, isActive: false }
+      1: { position: 100, isCleared: false, isActive: false },
+      2: { position: 200, isCleared: false, isActive: false },
+      3: { position: 300, isCleared: false, isActive: false },
+      4: { position: 400, isCleared: false, isActive: false }
     };
     this.route = routes[color];
   }

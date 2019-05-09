@@ -9,10 +9,10 @@ test("should create set of 4 coins with initial position 0", () => {
   const expected = {
     color: "red",
     coins: {
-      1: { position: 0, isCleared: false, isActive: false },
-      2: { position: 0, isCleared: false, isActive: false },
-      3: { position: 0, isCleared: false, isActive: false },
-      4: { position: 0, isCleared: false, isActive: false }
+      1: { position: 100, isCleared: false, isActive: false },
+      2: { position: 200, isCleared: false, isActive: false },
+      3: { position: 300, isCleared: false, isActive: false },
+      4: { position: 400, isCleared: false, isActive: false }
     },
     route : routes["red"]
   };
@@ -21,11 +21,13 @@ test("should create set of 4 coins with initial position 0", () => {
 });
 
 test("should increase position of given coin by given value", () => {
+  coinSet.makeCoinActive(1);
   coinSet.moveCoin(1, 2);
   expect(coinSet.getCoinPosition(1)).toBe(2);
 });
 
 test("should reset the coin position to 0", () => {
+  coinSet.makeCoinActive(1);
   coinSet.moveCoin(1, 2);
   coinSet.moveCoin(1, 2);
   coinSet.resetPosition(1);

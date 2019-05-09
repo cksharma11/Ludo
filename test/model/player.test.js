@@ -12,22 +12,22 @@ test("sould create player with set of coins", () => {
         1: {
           isActive: false,
           isCleared: false,
-          position: 0
+          position: 100
         },
         2: {
           isActive: false,
           isCleared: false,
-          position: 0
+          position: 200
         },
         3: {
           isActive: false,
           isCleared: false,
-          position: 0
+          position: 300
         },
         4: {
           isActive: false,
           isCleared: false,
-          position: 0
+          position: 400
         }
       },
       color: "red",

@@ -16,10 +16,12 @@ const createGameView = gameData => {
   document.getElementById("dice").innerText = gameData.diceValue;
 
   gameData.players.forEach(player => {
-    for (let coinNumber = 1; coinNumber < 5; coinNumber++) {
-      document.getElementById(`${player.color}_coin_${coinNumber}`).innerHTML = coin(
-        player.color
-      );
+    for (let coinNumber = 0; coinNumber < 4; coinNumber++) {
+      const position = player.coins.coins[coinNumber].position;
+      (
+        document.getElementById(`${player.color}_coin_${position}`) ||
+        document.getElementById(`${position}`)
+      ).innerHTML = coin(player.color);
     }
   });
 };
